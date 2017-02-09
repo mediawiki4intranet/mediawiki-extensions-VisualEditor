@@ -1136,9 +1136,9 @@ ve.init.mw.Target.prototype.getHtml = function ( newDoc ) {
 	$( newDoc )
 		.find(
 			'script, ' + // T54884, T65229, T96533, T103430
-			'object, ' + // T65229
-			'style, ' + // T55252
-			'embed, ' + // T53521, T54791, T65121
+			//'object, ' + // T65229  !!MediaWiki4IntraNet Extension with SVG images.
+			//'style, ' + // T55252   !!MediaWiki4IntraNet 
+			//'embed, ' + // T53521, T54791, T65121 + // T55252   !!MediaWiki4IntraNet 
 			'div[id="myEventWatcherDiv"], ' + // T53423
 			'div[id="sendToInstapaperResults"], ' + // T63776
 			'div[id="kloutify"], ' + // T69006
