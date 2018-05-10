@@ -51,7 +51,7 @@ class VisualEditorHooks {
 	 * @param Skin $skin
 	 * @return boolean
 	 */
-	public static function onBeforePageDisplay( OutputPage &$output, Skin &$skin ) {
+	public static function onBeforePageDisplay( OutputPage $output, Skin $skin ) {
 		$output->addModules( array(
 			'ext.visualEditor.desktopArticleTarget.init',
 			'ext.visualEditor.targetLoader'
@@ -100,7 +100,7 @@ class VisualEditorHooks {
 	 * @param array $links Navigation links
 	 * @return boolean
 	 */
-	public static function onSkinTemplateNavigation( SkinTemplate &$skin, array &$links ) {
+	public static function onSkinTemplateNavigation( SkinTemplate $skin, array &$links ) {
 		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'visualeditor' );
 
 		// Exit if the user doesn't have VE enabled
@@ -454,7 +454,7 @@ class VisualEditorHooks {
 	 * @param ResourceLoader $resourceLoader
 	 * @return boolean true
 	 */
-	public static function onResourceLoaderRegisterModules( ResourceLoader &$resourceLoader ) {
+	public static function onResourceLoaderRegisterModules( ResourceLoader $resourceLoader ) {
 		$resourceModules = $resourceLoader->getConfig()->get( 'ResourceModules' );
 
 		$veResourceTemplate = array(
@@ -547,7 +547,7 @@ class VisualEditorHooks {
 
 	public static function onResourceLoaderTestModules(
 		array &$testModules,
-		ResourceLoader &$resourceLoader
+		ResourceLoader $resourceLoader
 	) {
 		$testModules['qunit']['ext.visualEditor.test'] = array(
 			'styles' => array(
